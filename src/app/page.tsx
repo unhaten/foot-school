@@ -19,17 +19,26 @@ export default function Home() {
 					</p>
 					<div className='flex items-center gap-4 justify-center my-6'>
 						<Button
-							className='w-1/2 flex gap-1 text-md'
+							className='w-1/2 flex gap-1 text-md transition-all active:scale-[0.97]'
 							variant='outline'
 						>
 							Игрок <LuUserCircle2 />
 						</Button>
-						<Button className='w-1/2 flex gap-1 text-md bg-zinc-950 hover:bg-zinc-800'>
+						<Button className='w-1/2 flex gap-1 text-md bg-zinc-950 transition-all hover:bg-zinc-800 active:scale-[0.97]'>
 							Клуб <GiBorderedShield />
 						</Button>
 					</div>
 				</div>
-				<div className='border-solid border-stone-600 w-3/4 lg:w-1/3 h-[400px] border-8 m-auto rounded-3xl'></div>
+				<div className='w-3/4 lg:w-4/12 h-[400px] m-auto rounded-3xl relative'>
+					<Image
+						src='/football-pic.webp'
+						alt='logo'
+						fill
+						// sizes='100vw'
+						// priority
+						className='rounded-3xl'
+					/>
+				</div>
 			</div>
 		</main>
 	)
