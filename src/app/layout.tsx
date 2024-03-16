@@ -3,7 +3,7 @@ import { Montserrat as FontSans } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
-import Nav from './../components/nav/nav'
+import Nav from '@/components/nav/nav'
 import Footer from '@/components/footer/footer'
 
 // const inter = Inter({ subsets: ["latin"] });
