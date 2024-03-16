@@ -8,6 +8,8 @@ import { LiaTelegram } from 'react-icons/lia'
 import { AiOutlineYoutube } from 'react-icons/ai'
 
 import { cn } from '@/lib/utils'
+import { Button } from '../ui/button'
+import NavLinks from './nav-links'
 
 const Nav = () => {
 	return (
@@ -20,18 +22,7 @@ const Nav = () => {
 					<h2 className='text-2xl font-bold'>FootSchool</h2>
 				</div>
 				<ul className='flex items-center gap-3'>
-					<li className='rounded-full bg-background p-2'>
-						<SlSocialVkontakte className='text-2xl text-foreground' />
-					</li>
-					<li className='rounded-full bg-background p-2'>
-						<IoLogoInstagram className='text-2xl text-foreground' />
-					</li>
-					<li className='rounded-full bg-background p-2'>
-						<LiaTelegram className='text-2xl text-foreground' />
-					</li>
-					<li className='rounded-full bg-background p-2'>
-						<AiOutlineYoutube className='text-2xl text-foreground' />
-					</li>
+					<NavLinks />
 				</ul>
 			</div>
 		</nav>

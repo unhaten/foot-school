@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter as FontSans } from 'next/font/google'
+import { Montserrat as FontSans } from 'next/font/google'
 import './globals.css'
-import Nav from '@/components/nav/Nav'
+import Nav from '@/components/nav/nav'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import Footer from '@/components/footer/footer'
@@ -44,7 +44,7 @@ export default function RootLayout({
 					<div className='max-w-screen-2xl m-auto px-8'>
 						{children}
 					</div>
-					<Footer />
+					{/* <Footer /> */}
 				</ThemeProvider>
 			</body>
 		</html>
