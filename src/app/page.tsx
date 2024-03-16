@@ -37,7 +37,7 @@ export default function Home() {
 				<div className='w-3/4 lg:w-4/12 m-auto rounded-3xl'>
 					<AspectRatio ratio={4 / 3}>
 						<Image
-							src='/football-pic.webp'
+							src='/football-pic.jpg'
 							alt='logo'
 							fill
 							// sizes='100vw'

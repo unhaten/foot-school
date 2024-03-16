@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Montserrat as FontSans } from 'next/font/google'
 import './globals.css'
-import Nav from '@/components/nav/nav'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
+import Nav from './../components/nav/nav'
 import Footer from '@/components/footer/footer'
 
 // const inter = Inter({ subsets: ["latin"] });
