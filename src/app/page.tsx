@@ -28,7 +28,7 @@ export default function Home() {
 						<div className='relative mt-6'>
 							<div className='flex flex-col md:flex-row items-center gap-4 justify-center'>
 								<Link
-									href='/auth/player'
+									href='/auth/player/login'
 									className='w-full md:w-1/2'
 								>
 									<Button
@@ -39,7 +39,7 @@ export default function Home() {
 									</Button>
 								</Link>
 								<Link
-									href='auth/club'
+									href='auth/club/login'
 									className='w-full md:w-1/2'
 								>
 									<Button className='w-full h-15 flex gap-1 text-md bg-zinc-950 hover:bg-zinc-800'>

@@ -2,6 +2,8 @@ import Image from 'next/image'
 import * as React from 'react'
 
 import NavLinks from './nav-links'
+import { ModeToggle } from '../toggle-theme'
+import { Separator } from '../ui/separator'
 
 const NavBar = () => {
 	return (
@@ -13,9 +15,13 @@ const NavBar = () => {
 					</div>
 					<h2 className='text-2xl font-bold'>FootSchool</h2>
 				</div>
-				<ul className='flex items-center gap-3'>
-					<NavLinks />
-				</ul>
+				<div className='flex items-center gap-3'>
+					<ul className='flex items-center gap-3'>
+						<NavLinks />
+					</ul>
+					<Separator orientation='vertical' />
+					<ModeToggle />
+				</div>
 			</div>
 		</nav>
 	)
