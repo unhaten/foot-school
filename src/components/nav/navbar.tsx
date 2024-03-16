@@ -13,7 +13,9 @@ const NavBar = () => {
 					<div className='w-10 h-10 relative'>
 						<Image src='/logo.png' alt='logo' fill />
 					</div>
-					<h2 className='text-2xl font-bold'>FootSchool</h2>
+					<h2 className='text-2xl font-bold dark:text-foreground'>
+						FootSchool
+					</h2>
 				</div>
 				<div className='flex items-center gap-3'>
 					<ul className='flex items-center gap-3'>

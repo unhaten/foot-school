@@ -42,7 +42,7 @@ export default function Home() {
 									href='auth/club/login'
 									className='w-full md:w-1/2'
 								>
-									<Button className='w-full h-15 flex gap-1 text-md bg-zinc-950 hover:bg-zinc-800'>
+									<Button className='w-full h-15 flex gap-1 text-md text-background bg-zinc-950 hover:bg-zinc-800 dark:bg-white dark:hover:bg-slate-400'>
 										Клуб <GiBorderedShield />
 									</Button>
 								</Link>
