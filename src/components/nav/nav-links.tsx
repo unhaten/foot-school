@@ -8,19 +8,19 @@ import Link from 'next/link'
 const NavLinks = () => {
 	const links = [
 		{
-			href: '/',
+			href: '#',
 			icon: <SlSocialVkontakte className='text-xl text-foreground' />
 		},
 		{
-			href: '/',
+			href: '#',
 			icon: <IoLogoInstagram className='text-xl text-foreground' />
 		},
 		{
-			href: '/',
+			href: '#',
 			icon: <LiaTelegram className='text-xl text-foreground' />
 		},
 		{
-			href: '/',
+			href: '#',
 			icon: <AiOutlineYoutube className='text-xl text-foreground' />
 		}
 	]

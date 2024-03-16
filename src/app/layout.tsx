@@ -31,6 +31,7 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 				// className={inter.className}
+				// suppressHydrationWarning={true}
 			>
 				<ThemeProvider
 					attribute='class'
@@ -38,12 +39,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<header className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-						<NavBar />
-					</header>
-					<div className='max-w-screen-2xl m-auto px-8'>
-						{children}
-					</div>
+					{children}
 					{/* <Footer /> */}
 				</ThemeProvider>
 			</body>
