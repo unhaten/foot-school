@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import NavLinks from './nav-links'
 
-const Nav = () => {
+const NavBar = () => {
 	return (
 		<nav className='p-4 bg-zinc-900'>
 			<div className='flex items-center justify-center m-auto text-background'>
@@ -21,4 +21,4 @@ const Nav = () => {
 	)
 }
 
-export default Nav
+export default NavBar
