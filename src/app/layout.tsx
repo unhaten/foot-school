@@ -3,7 +3,7 @@ import { Montserrat as FontSans } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
-import Nav from '@/components/nav/nav'
+// import Nav from '@/components/nav/nav'
 import Footer from '@/components/footer/footer'
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -39,7 +39,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<header className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-						<Nav />
+						{/* <Nav /> */}
 					</header>
 					<div className='max-w-screen-2xl m-auto px-8'>
 						{children}

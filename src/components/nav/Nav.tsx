@@ -6,7 +6,7 @@ import NavLinks from './nav-links'
 const Nav = () => {
 	return (
 		<nav className='p-4 bg-zinc-900'>
-			{/* <div className='flex items-center justify-center m-auto text-background'>
+			<div className='flex items-center justify-center m-auto text-background'>
 				<div className='flex items-center gap-2 w-7/12'>
 					<div className='w-10 h-10 relative'>
 						<Image src='/logo.png' alt='logo' fill />
@@ -16,7 +16,7 @@ const Nav = () => {
 				<ul className='flex items-center gap-3'>
 					<NavLinks />
 				</ul>
-			</div> */}
+			</div>
 		</nav>
 	)
 }
