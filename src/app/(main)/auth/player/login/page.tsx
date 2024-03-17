@@ -1,4 +1,4 @@
-import MainForm from '@/components/main-form/main-form'
+import MainLoginForm from '@/components/main-form/main-login-form'
 
 const PlayerLoginPage = () => {
 	return (
@@ -6,7 +6,7 @@ const PlayerLoginPage = () => {
 			<h2 className='text-center text-2xl font-medium mb-4'>
 				Вход в аккаунт
 			</h2>
-			<MainForm />
+			<MainLoginForm />
 		</>
 	)
 }

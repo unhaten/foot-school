@@ -10,7 +10,7 @@ import Link from 'next/link'
 export default function Home() {
 	return (
 		<>
-			<header className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+			<header className='sticky top-0 z-50 w-full border-b border-border/40 bg-zinc-900/95 backdrop-blur supports-[backdrop-filter]:bg-zinc-900/85'>
 				<NavBar />
 			</header>
 			<main className='flex flex-col items-center justify-center mt-12 md:mt-20 2xl:mt-28 max-w-screen-2xl m-auto px-8'>
@@ -42,7 +42,7 @@ export default function Home() {
 									href='auth/club/login'
 									className='w-full md:w-1/2'
 								>
-									<Button className='w-full h-15 flex gap-1 text-md text-background bg-zinc-950 hover:bg-zinc-800 dark:bg-white dark:hover:bg-slate-400'>
+									<Button className='w-full h-15 flex gap-1 text-md text-background bg-zinc-950 hover:bg-zinc-800 dark:bg-white dark:hover:bg-white/60'>
 										Клуб <GiBorderedShield />
 									</Button>
 								</Link>

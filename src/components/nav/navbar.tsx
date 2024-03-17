@@ -7,9 +7,9 @@ import { Separator } from '../ui/separator'
 
 const NavBar = () => {
 	return (
-		<nav className='p-4 bg-zinc-900'>
-			<div className='flex items-center justify-center m-auto text-background'>
-				<div className='flex items-center gap-2 w-7/12'>
+		<nav className='p-4'>
+			<div className='flex items-center justify-between sm:justify-center m-auto text-background'>
+				<div className='flex items-center gap-2 w-9/12'>
 					<div className='w-10 h-10 relative'>
 						<Image src='/logo.png' alt='logo' fill />
 					</div>
@@ -18,10 +18,13 @@ const NavBar = () => {
 					</h2>
 				</div>
 				<div className='flex items-center gap-3'>
-					<ul className='flex items-center gap-3'>
+					<ul className='sm:flex items-center gap-3 hidden'>
 						<NavLinks />
 					</ul>
-					<Separator orientation='vertical' />
+					<Separator
+						orientation='vertical'
+						className='hidden sm:block h-8 bg-primary'
+					/>
 					<ModeToggle />
 				</div>
 			</div>

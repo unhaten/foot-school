@@ -1,21 +1,20 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import {
 	Form,
 	FormControl,
-	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
 	FormMessage
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { useForm } from 'react-hook-form'
+} from '@/components/ui/form-stuff/form'
+import { Input } from '@/components/ui/form-stuff/input'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-const MainForm = ({ actionText = 'Войти' }) => {
+const MainRegisterForm = ({ actionText = 'Войти' }) => {
 	const formSchema = z.object({
 		username: z.string().min(2).max(50)
 	})
@@ -67,4 +66,4 @@ const MainForm = ({ actionText = 'Войти' }) => {
 	)
 }
 
-export default MainForm
+export default MainRegisterForm
