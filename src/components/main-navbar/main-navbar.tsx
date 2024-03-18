@@ -15,7 +15,7 @@ import {
 	DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
-const MainNavBar = ({ isLogged = true }) => {
+const MainNavBar = ({ isLogged = false }) => {
 	return (
 		<nav className='pb-1'>
 			<div className='grid grid-cols-3 items-center justify-between m-auto text-background px-4 md:px-8 lg:px-16 xl:px-24'>
