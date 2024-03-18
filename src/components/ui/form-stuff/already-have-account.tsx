@@ -9,7 +9,7 @@ interface AlreadyHaveAccountProps {
 
 const AlreadyHaveAccount: FC<AlreadyHaveAccountProps> = ({ text, href }) => {
 	return (
-		<div className='flex items-center justify-center gap-2 mt-8'>
+		<div className='flex flex-col sm:flex-row items-center justify-center gap-2 mt-8'>
 			<p className='text-sm'>Уже есть аккаунт?</p>
 			<Button variant='link' asChild className='text-indigo-500'>
 				<Link href={`${href}`}>

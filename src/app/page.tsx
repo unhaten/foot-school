@@ -7,7 +7,7 @@ import HoverCards from '@/components/ui/card-hover/hover-cards'
 import NavBar from '@/components/nav/navbar'
 import Link from 'next/link'
 
-export default function Home() {
+export default function HomePage() {
 	return (
 		<>
 			<header className='sticky top-0 z-50 w-full border-b border-border/40 bg-zinc-900/95 backdrop-blur supports-[backdrop-filter]:bg-zinc-900/85'>
