@@ -25,7 +25,10 @@ export default function Home() {
 							футбольном поле. Присоединяйтесь к нам и начните
 							свое путешествие в мир профессионального футбола!
 						</p>
-						<div className='relative mt-6'>
+						<div className='relative mt-4'>
+							<h3 className='mb-4 text-lg font-medium rounded-xl py-2 text-center'>
+								Выберите способ входа
+							</h3>
 							<div className='flex flex-col md:flex-row items-center gap-4 justify-center'>
 								<Link
 									href='/auth/player/login'
