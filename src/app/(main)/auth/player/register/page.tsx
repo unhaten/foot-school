@@ -1,4 +1,4 @@
-import MainLoginForm from '@/components/main-form/main-login-form'
+import MainRegisterForm from '@/components/main-form/main-register-form'
 import AlreadyHaveAccount from '@/components/ui/form-stuff/already-have-account'
 
 const PlayerRegisterPage = () => {
@@ -7,7 +7,7 @@ const PlayerRegisterPage = () => {
 			<h2 className='text-center text-2xl font-medium mb-4'>
 				Регистрация
 			</h2>
-			<MainLoginForm />
+			<MainRegisterForm />
 			<AlreadyHaveAccount text='Войти' href='/auth/player/login' />
 		</>
 	)

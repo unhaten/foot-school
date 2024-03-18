@@ -47,7 +47,7 @@ const MainLoginForm = ({ actionText = 'Войти' }) => {
 					name='username'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Имя пользователя</FormLabel>
+							<FormLabel>Логин пользователя</FormLabel>
 							<FormControl>
 								<Input placeholder='user' {...field} />
 							</FormControl>
@@ -65,7 +65,11 @@ const MainLoginForm = ({ actionText = 'Войти' }) => {
 						<FormItem>
 							<FormLabel>Пароль</FormLabel>
 							<FormControl>
-								<Input placeholder='••••••••' {...field} />
+								<Input
+									placeholder='••••••••'
+									type='password'
+									{...field}
+								/>
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -84,7 +88,7 @@ const MainLoginForm = ({ actionText = 'Войти' }) => {
 					type='submit'
 					variant='outline'
 				>
-					<span>Войти &rarr;</span>
+					<span>{actionText} &rarr;</span>
 					<BottomGradient />
 				</Button>
 			</form>

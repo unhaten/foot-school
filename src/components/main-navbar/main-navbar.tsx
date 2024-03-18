@@ -1,12 +1,21 @@
-import { Form } from 'react-hook-form'
 import NavLinks from '../nav/nav-links'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { ModeToggle } from '../toggle-theme'
 import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { FaRegUserCircle } from 'react-icons/fa'
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
 
-const MainNavBar = ({ isLogged = false }) => {
+const MainNavBar = ({ isLogged = true }) => {
 	return (
 		<nav className='pb-1'>
 			<div className='grid grid-cols-3 items-center justify-between m-auto text-background px-4 md:px-8 lg:px-16 xl:px-24'>
@@ -22,7 +31,7 @@ const MainNavBar = ({ isLogged = false }) => {
 				</div>
 				<div className='mx-auto'>
 					<Link
-						href='/'
+						href={isLogged ? '/browse' : '/'}
 						className='block px-8 pb-2 pt-3 bg-white rounded-b-full hover:bg-primary transition-all'
 					>
 						<Image
@@ -35,9 +44,30 @@ const MainNavBar = ({ isLogged = false }) => {
 				</div>
 				<div className='text-right'>
 					{isLogged && (
-						<Button variant={'secondary'}>
-							<span>Выйти</span>
-						</Button>
+						<DropdownMenu>
+							<DropdownMenuTrigger className='focus-visible:'>
+								<Button
+									asChild
+									size='icon'
+									variant='secondary'
+									className='rounded-full text-foreground p-2'
+								>
+									<FaRegUserCircle className='text-lg' />
+								</Button>
+							</DropdownMenuTrigger>
+							<DropdownMenuContent>
+								<DropdownMenuLabel>Профиль</DropdownMenuLabel>
+								<DropdownMenuSeparator />
+								<Link href='/profile'>
+									<DropdownMenuItem>
+										Подробнее
+									</DropdownMenuItem>
+								</Link>
+								<DropdownMenuItem className='text-red-600'>
+									Выйти
+								</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
 					)}
 				</div>
 			</div>

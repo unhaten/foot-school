@@ -6,6 +6,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio'
 import HoverCards from '@/components/ui/card-hover/hover-cards'
 import NavBar from '@/components/nav/navbar'
 import Link from 'next/link'
+import { IoMdFootball } from 'react-icons/io'
 
 export default function HomePage() {
 	return (
@@ -38,7 +39,7 @@ export default function HomePage() {
 										className='w-full h-15 flex gap-1 text-md'
 										variant='outline'
 									>
-										Игрок <LuUserCircle2 />
+										Игрок <IoMdFootball />
 									</Button>
 								</Link>
 								<Link

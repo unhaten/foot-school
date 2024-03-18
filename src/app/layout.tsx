@@ -10,6 +10,7 @@ import NavBar from '@/components/nav/navbar'
 
 const fontSans = FontSans({
 	subsets: ['latin'],
+	display: 'swap',
 	variable: '--font-sans'
 })
 
