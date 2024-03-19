@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { ModeToggle } from '../toggle-theme'
 import { Button } from '@/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { FaRegUserCircle } from 'react-icons/fa'
 import {
 	DropdownMenu,
@@ -15,7 +14,7 @@ import {
 	DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
-const MainNavBar = ({ isLogged = false }) => {
+const MainNavBar = ({ isLogged = true }) => {
 	return (
 		<nav className='pb-1'>
 			<div className='grid grid-cols-3 items-center justify-between m-auto text-background px-4 md:px-8 lg:px-16 xl:px-24'>

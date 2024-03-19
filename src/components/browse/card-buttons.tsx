@@ -1,39 +1,43 @@
 import { Button } from '@/components/ui/button'
+import { ImHeart } from 'react-icons/im'
+import { FaCommentAlt } from 'react-icons/fa'
+import { PiBookmarkSimpleFill } from 'react-icons/pi'
+import { FaShare } from 'react-icons/fa6'
 
 const CardButtons = () => {
 	return (
-		<ul className='flex flex-col justify-end gap-3 items-center w-14'>
-			<li className='flex flex-col items-center gap-1'>
+		<div className='grid grid-cols-3 items-center w-full'>
+			<div className='flex flex-col items-center gap-1'>
 				<Button
-					className='rounded-full'
+					className='rounded-full w-12 h-12'
 					size={'icon'}
-					variant='secondary'
+					variant='outline'
 				>
-					s
+					<ImHeart className='text-2xl' />
 				</Button>
 				<span>2345</span>
-			</li>
-			<li className='flex flex-col items-center gap-1'>
+			</div>
+			<div className='flex flex-col items-center gap-1'>
 				<Button
-					className='rounded-full'
+					className='rounded-full w-12 h-12'
 					size={'icon'}
-					variant='secondary'
+					variant='outline'
 				>
-					c
+					<PiBookmarkSimpleFill className='text-2xl' />
 				</Button>
 				<span>23</span>
-			</li>
-			<li className='flex flex-col items-center gap-1'>
+			</div>
+			<div className='flex flex-col items-center gap-1'>
 				<Button
-					className='rounded-full'
+					className='rounded-full w-12 h-12'
 					size={'icon'}
-					variant='secondary'
+					variant='outline'
 				>
-					k
+					<FaShare className='text-2xl' />
 				</Button>
 				<span>3</span>
-			</li>
-			<li className='flex flex-col items-center gap-1'>
+			</div>
+			{/* <div className='flex flex-col items-center gap-1'>
 				<Button
 					className='rounded-full'
 					size={'icon'}
@@ -42,8 +46,8 @@ const CardButtons = () => {
 					q
 				</Button>
 				<span>89</span>
-			</li>
-		</ul>
+			</div> */}
+		</div>
 	)
 }
 
