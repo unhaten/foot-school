@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
+import { PanInfo } from 'framer-motion'
 
 type CardType = {
 	id: number
@@ -19,12 +20,18 @@ const Card = ({
 }) => {
 	const controls = useAnimation()
 
-	const handleDrag = (_, info) => {
+	const handleDrag = (
+		_: MouseEvent | TouchEvent | PointerEvent,
+		info: PanInfo
+	) => {
 		const rotate = info.offset.x / 20
 		controls.set({ rotate })
 	}
 
-	const handleDragEnd = async (_, info) => {
+	const handleDragEnd = async (
+		_: MouseEvent | TouchEvent | PointerEvent,
+		info: PanInfo
+	) => {
 		if (Math.abs(info.offset.x) > 200) {
 			await controls.start({
 				x: info.offset.x > 0 ? 500 : -500,
@@ -32,7 +39,6 @@ const Card = ({
 				transition: { duration: 0.2 }
 			})
 			onSwipe()
-			console.log('swiped', info)
 		} else {
 			await controls.start({
 				x: 0,
@@ -44,7 +50,7 @@ const Card = ({
 
 	return (
 		<motion.div
-			className='bg-white rounded-3xl p-4 shadow-xl border border-neutral-200 flex flex-col justify-between'
+			className='bg-white rounded-3xl p-4 shadow-xl border border-neutral-200 flex flex-col justify-between text-foreground dark:text-background'
 			drag='x'
 			dragConstraints={{ left: 0, right: 0 }}
 			onDrag={handleDrag}
