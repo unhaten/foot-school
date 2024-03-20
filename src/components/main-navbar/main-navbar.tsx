@@ -17,8 +17,8 @@ import {
 const MainNavBar = ({ isLogged = true }) => {
 	return (
 		<nav className='pb-1'>
-			<div className='grid grid-cols-3 items-center justify-between m-auto text-background px-4 md:px-8 lg:px-16 xl:px-24'>
-				<div className='flex items-center gap-3 mt-1'>
+			<div className='flex items-center justify-between m-auto text-background px-4 md:px-8 lg:px-16 xl:px-24'>
+				<div className='flex basis-1/4 items-center gap-3 mt-1'>
 					<ModeToggle />
 					<Separator
 						orientation='vertical'
@@ -28,20 +28,54 @@ const MainNavBar = ({ isLogged = true }) => {
 						<NavLinks />
 					</ul>
 				</div>
-				<div className='mx-auto'>
-					<Link
-						href={isLogged ? '/browse' : '/'}
-						className='block px-8 pb-2 pt-3 bg-white rounded-b-full hover:bg-primary transition-all'
-					>
-						<Image
-							src='/logo.png'
-							width={45}
-							height={45}
-							alt='logo'
-						/>
-					</Link>
+				<div className='basis-1/2'>
+					{isLogged ? (
+						<div className='flex items-center justify-center gap-10'>
+							<Link href='/search/clubs' className='hidden sm:block'>
+								<Button
+									variant='link'
+									className='text-background dark:text-foreground p-0'
+								>
+									Клубы
+								</Button>
+							</Link>
+							<Link
+								href={'/browse'}
+								className='block px-8 pb-2 pt-3 bg-white rounded-b-full hover:bg-primary transition-all'
+							>
+								<Image
+									src='/logo.png'
+									width={45}
+									height={45}
+									alt='logo'
+								/>
+							</Link>
+							<Link href='/' className='hidden sm:block'>
+								<Button
+									variant='link'
+									className='text-background dark:text-foreground p-0'
+								>
+									Игроки
+								</Button>
+							</Link>
+						</div>
+					) : (
+						<div className='flex items-center justify-center gap-10'>
+							<Link
+								href={'/search/players'}
+								className='block px-8 pb-2 pt-3 bg-white rounded-b-full hover:bg-primary transition-all'
+							>
+								<Image
+									src='/logo.png'
+									width={45}
+									height={45}
+									alt='logo'
+								/>
+							</Link>
+						</div>
+					)}
 				</div>
-				<div className='text-right'>
+				<div className='text-right basis-1/4'>
 					{isLogged && (
 						<DropdownMenu>
 							<DropdownMenuTrigger className='focus-visible:'>

@@ -15,7 +15,7 @@ const BrowsePage = () => {
 			</div> */}
 			{[1, 2, 3].map(card => (
 				<CardContainer key={card} className='inter-var'>
-					<CardBody className='bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] lg:w-[40rem] h-auto rounded-xl p-6 border  '>
+					<CardBody className='bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] lg:w-[40rem] h-auto rounded-xl py-6 px-3 sm:px-6 border  '>
 						<div className='flex justify-between items-center'>
 							<CardItem
 								translateZ='50'
@@ -37,7 +37,7 @@ const BrowsePage = () => {
 							<CardItem
 								as='p'
 								translateZ='60'
-								className='text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300'
+								className='text-neutral-500 text-xs sm:text-sm max-w-sm mt-2 dark:text-neutral-300'
 							>
 								3 часа назад
 							</CardItem>

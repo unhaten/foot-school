@@ -12,6 +12,7 @@ const CardButtons = () => {
 					className='rounded-full w-12 h-12'
 					size={'icon'}
 					variant='outline'
+					// className='bg-white w-5 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800'
 				>
 					<ImHeart className='text-2xl' />
 				</Button>
