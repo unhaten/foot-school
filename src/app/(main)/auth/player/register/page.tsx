@@ -1,4 +1,4 @@
-import MainRegisterForm from '@/components/main-form/main-register-form'
+import MainRegisterForm from '@/components/ui/main-form/main-register-form'
 import AlreadyHaveAccount from '@/components/ui/form-stuff/already-have-account'
 
 const PlayerRegisterPage = () => {

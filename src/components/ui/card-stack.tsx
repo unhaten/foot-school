@@ -50,9 +50,11 @@ const Card = ({
 
 	return (
 		<motion.div
-			className='bg-white rounded-3xl p-4 shadow-xl border border-neutral-200 flex flex-col justify-between text-foreground dark:text-background'
+			className='bg-white rounded-3xl p-4 border border-neutral-200 flex flex-col justify-between text-foreground dark:text-background'
 			drag='x'
 			dragConstraints={{ left: 0, right: 0 }}
+			whileHover={{ scale: 1.1 }}
+			whileTap={{ boxShadow: '0px 0px 15px rgba(0,0,0,0.2)' }}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
 			dragElastic={0.5}

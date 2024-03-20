@@ -2,8 +2,8 @@ import Image from 'next/image'
 import * as React from 'react'
 
 import NavLinks from './nav-links'
-import { ModeToggle } from '../toggle-theme'
-import { Separator } from '../ui/separator'
+import { ModeToggle } from '../../toggle-theme'
+import { Separator } from '../separator'
 
 const NavBar = () => {
 	return (

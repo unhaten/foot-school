@@ -1,4 +1,4 @@
-import MainLoginForm from '@/components/main-form/main-login-form'
+import MainLoginForm from '@/components/ui/main-form/main-login-form'
 import AlreadyHaveAccount from '@/components/ui/form-stuff/already-have-account'
 
 const PlayerLoginPage = () => {

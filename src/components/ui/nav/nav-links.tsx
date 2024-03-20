@@ -2,7 +2,7 @@ import { SlSocialVkontakte } from 'react-icons/sl'
 import { IoLogoInstagram } from 'react-icons/io'
 import { LiaTelegram } from 'react-icons/lia'
 import { AiOutlineYoutube } from 'react-icons/ai'
-import { Button } from '../ui/button'
+import { Button } from '../button'
 import Link from 'next/link'
 
 const NavLinks = () => {

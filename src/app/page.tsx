@@ -4,7 +4,7 @@ import { LuUserCircle2 } from 'react-icons/lu'
 import { GiBorderedShield } from 'react-icons/gi'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import HoverCards from '@/components/ui/card-hover/hover-cards'
-import NavBar from '@/components/nav/navbar'
+import NavBar from '@/components/ui/nav/navbar'
 import Link from 'next/link'
 import { IoMdFootball } from 'react-icons/io'
 
