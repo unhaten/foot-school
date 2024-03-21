@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 import { PanInfo } from 'framer-motion'
 
@@ -25,11 +25,22 @@ const Card = ({
 	const [swipeDirection, setSwipeDirection] = useState<
 		null | 'left' | 'right'
 	>(null)
+	
+	const isMounted = useRef(false)
+
+	useEffect(() => {
+		isMounted.current = true // Устанавливаем флаг монтирования в true при монтировании компонента
+		return () => {
+			isMounted.current = false // Сбрасываем флаг при размонтировании компонента
+		}
+	}, [])
 
 	const handleDrag = (
 		_: MouseEvent | TouchEvent | PointerEvent,
 		info: PanInfo
 	) => {
+		if (!isMounted.current) return
+
 		const direction = info.offset.x > 0 ? 'right' : 'left'
 		setSwipeDirection(direction)
 		const rotate = info.offset.x / 30
@@ -40,6 +51,8 @@ const Card = ({
 		_: MouseEvent | TouchEvent | PointerEvent,
 		info: PanInfo
 	) => {
+		if (!isMounted.current) return // Проверяем, что компонент смонтирован
+
 		if (Math.abs(info.offset.x) > 150) {
 			await controls.start({
 				x: info.offset.x > 0 ? 500 : -500,
@@ -60,9 +73,9 @@ const Card = ({
 	// Динамически определяем цвет тени на основе направления свайпа
 	const boxShadowColor =
 		swipeDirection === 'right'
-			? 'red'
-			: swipeDirection === 'left'
 			? 'green'
+			: swipeDirection === 'left'
+			? 'red'
 			: 'gray'
 
 	return (
@@ -70,6 +83,7 @@ const Card = ({
 			className='bg-white rounded-3xl p-4 shadow-xl border border-neutral-200 flex flex-col justify-between'
 			drag='x'
 			dragConstraints={{ left: 0, right: 0 }}
+			dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
 			dragElastic={0.5}
@@ -84,6 +98,7 @@ const Card = ({
 			<div>
 				<p>{card.name}</p>
 				<p>{card.designation}</p>
+				<p>{card.id}</p>
 			</div>
 		</motion.div>
 	)

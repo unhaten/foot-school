@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
-import { CardStack } from '../ui/card-stack'
 import { cn } from '@/lib/utils'
-import { Button } from '../ui/button'
+import { CardStack } from '@/whyIDidThis/card-stack'
+import { Button } from '@/components/ui/moving-border'
 
 export function Cards() {
 	// В данном случае, мы управляем состоянием видимых карточек внутри CardStack
