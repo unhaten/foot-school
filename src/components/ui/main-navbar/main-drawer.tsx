@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import {
 	Drawer,
@@ -9,10 +11,15 @@ import {
 	DrawerTitle,
 	DrawerTrigger
 } from '@/components/ui/drawer'
+import { useMediaQuery } from '@/hooks/use-media-query'
 import { RxHamburgerMenu } from 'react-icons/rx'
 
 const MainDrawer = () => {
-	return (
+	const isDesktop = useMediaQuery('(min-width:768px)')
+
+	return isDesktop ? (
+		<></>
+	) : (
 		<Drawer direction='right'>
 			<DrawerTrigger>
 				<Button

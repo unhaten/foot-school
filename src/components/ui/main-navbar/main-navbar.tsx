@@ -9,6 +9,7 @@ import CenteredLogo from './centered-logo'
 import MainDrawer from './main-drawer'
 
 const MainNavBar = ({ isLogged = true }) => {
+
 	return (
 		<nav className='pb-1'>
 			<div className='flex items-center justify-between m-auto text-background px-4 md:px-8 lg:px-16 xl:px-24'>
