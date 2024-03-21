@@ -2,14 +2,22 @@
 import { useState } from 'react'
 import { CardStack } from '../ui/card-stack'
 import { cn } from '@/lib/utils'
+import { Button } from '../ui/button'
 
 export function Cards() {
 	// В данном случае, мы управляем состоянием видимых карточек внутри CardStack
 	// Поэтому, нет необходимости в дополнительном состоянии для управления видимостью карточек
 
 	return (
-		<div className='flex flex-col items-center justify-center w-full'>
-			<CardStack items={CARDS} />
+		<div className='w-full mx-auto'>
+			<div className='flex flex-col items-center justify-center'>
+				<CardStack items={CARDS} />
+				<div className='mt-8 flex items-center rounded-full gap-6'>
+					<Button>like</Button>
+					<Button>dislike</Button>
+					<Button>report</Button>
+				</div>
+			</div>
 		</div>
 	)
 }

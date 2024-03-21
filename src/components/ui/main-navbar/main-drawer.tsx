@@ -18,8 +18,9 @@ const MainDrawer = () => {
 				<Button
 					size='icon'
 					className='rounded-full bg-transparent hover:bg-white/10'
+					asChild
 				>
-					<RxHamburgerMenu className='text-2xl text-background dark:text-foreground' />
+					<RxHamburgerMenu className='text-lg p-1 text-background dark:text-foreground' />
 				</Button>
 			</DrawerTrigger>
 			<DrawerContent>
