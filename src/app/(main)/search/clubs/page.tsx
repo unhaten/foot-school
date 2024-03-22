@@ -27,7 +27,7 @@ const ClubSearchPage = async () => {
 							<CarouselItem key={player.id} className=''>
 								<div className='p-1'>
 									<Card>
-										<CardContent className='flex aspect-square items-center justify-center p-6'>
+										<CardContent className='flex aspect-square items-center justify-center p-5'>
 											<span className='text-3xl font-semibold'>
 												{player.name}
 											</span>
