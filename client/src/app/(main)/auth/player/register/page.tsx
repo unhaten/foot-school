@@ -8,7 +8,11 @@ const PlayerRegisterPage = () => {
 				Регистрация
 			</h2>
 			<MainRegisterForm />
-			<AlreadyHaveAccount text='Войти' href='/auth/player/login' />
+			<AlreadyHaveAccount
+				askText='Уже есть аккаунт?'
+				text='Войти'
+				href='/auth/player/login'
+			/>
 		</>
 	)
 }

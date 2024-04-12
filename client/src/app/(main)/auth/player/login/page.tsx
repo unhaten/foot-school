@@ -9,6 +9,7 @@ const PlayerLoginPage = () => {
 			</h2>
 			<MainLoginForm />
 			<AlreadyHaveAccount
+				askText='Нет аккаунта?'
 				text='Зарегистрироваться'
 				href='/auth/player/register'
 			/>
