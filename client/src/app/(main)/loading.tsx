@@ -1,6 +1,6 @@
 import s from './style.module.css'
 
-const AppLoader = () => {
+const Loading = () => {
 	return (
 		<>
 			<div className={s.ldsDualRing}></div>
@@ -8,4 +8,4 @@ const AppLoader = () => {
 	)
 }
 
-export default AppLoader
+export default Loading
