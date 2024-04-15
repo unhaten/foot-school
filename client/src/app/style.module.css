@@ -1,3 +1,11 @@
+.container {
+	width: 100vw;
+	height: 100lvh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .ldsDualRing {
 	display: inline-block;
 	width: 80px;
