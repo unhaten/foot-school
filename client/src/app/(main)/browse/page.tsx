@@ -1,8 +1,4 @@
-import CardButtons from '@/components/browse/card-buttons'
-import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Cards } from '@/whyIDidThis/cards'
 
 const BrowsePage = () => {
 	return (
@@ -13,7 +9,10 @@ const BrowsePage = () => {
 					<CardButtons />
 				</div>
 			</div> */}
-			{[1, 2, 3].map(card => (
+
+			<Cards />
+
+			{/* {[1, 2, 3].map(card => (
 				<CardContainer key={card} className='inter-var'>
 					<CardBody className='bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] lg:w-[40rem] h-auto rounded-xl py-6 px-3 sm:px-6 border  '>
 						<div className='flex justify-between items-center'>
@@ -56,7 +55,7 @@ const BrowsePage = () => {
 						</CardItem>
 					</CardBody>
 				</CardContainer>
-			))}
+			))} */}
 		</main>
 	)
 }
