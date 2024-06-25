@@ -1,6 +1,5 @@
+import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence, useAnimation } from 'framer-motion'
-import { PanInfo } from 'framer-motion'
 
 type CardType = {
 	id: number
@@ -9,89 +8,45 @@ type CardType = {
 	content: React.ReactNode
 }
 
-// _: MouseEvent | TouchEvent | PointerEvent,
-// 		info: PanInfo
-
-const Card = ({
-	card,
-	onSwipe,
-	style
-}: {
-	card: CardType
-	onSwipe: () => void
-	style?: React.CSSProperties
-}) => {
+const Card = ({ card, onSwipe }: { card: CardType; onSwipe: () => void }) => {
 	const controls = useAnimation()
 	const [swipeDirection, setSwipeDirection] = useState<
 		null | 'left' | 'right'
 	>(null)
-	
+	const [color, setColor] = useState('gray') // initial color
+
 	const isMounted = useRef(false)
 
 	useEffect(() => {
-		isMounted.current = true // Устанавливаем флаг монтирования в true при монтировании компонента
+		isMounted.current = true
 		return () => {
-			isMounted.current = false // Сбрасываем флаг при размонтировании компонента
+			isMounted.current = false
 		}
 	}, [])
 
-	const handleDrag = (
-		_: MouseEvent | TouchEvent | PointerEvent,
-		info: PanInfo
-	) => {
+	const handleDrag = (_, info: { offset: { x: number } }) => {
 		if (!isMounted.current) return
+		controls.set({ x: info.offset.x })
+	}
 
+	const handleDragEnd = (_, info: { offset: { x: number } }) => {
+		if (!isMounted.current) return
+		controls.set({ x: 0 })
 		const direction = info.offset.x > 0 ? 'right' : 'left'
 		setSwipeDirection(direction)
-		const rotate = info.offset.x / 30
-		controls.set({ rotate })
+		setColor(direction === 'right' ? 'green' : 'red') // update color based on swipe direction
 	}
-
-	const handleDragEnd = async (
-		_: MouseEvent | TouchEvent | PointerEvent,
-		info: PanInfo
-	) => {
-		if (!isMounted.current) return // Проверяем, что компонент смонтирован
-
-		if (Math.abs(info.offset.x) > 150) {
-			await controls.start({
-				x: info.offset.x > 0 ? 500 : -500,
-				opacity: 0,
-				transition: { duration: 0.2 }
-			})
-			onSwipe()
-		} else {
-			await controls.start({
-				x: 0,
-				rotate: 0,
-				transition: { duration: 0.3 }
-			})
-			setSwipeDirection(null) // Сброс направления свайпа после завершения анимации
-		}
-	}
-
-	// Динамически определяем цвет тени на основе направления свайпа
-	const boxShadowColor =
-		swipeDirection === 'right'
-			? 'green'
-			: swipeDirection === 'left'
-			? 'red'
-			: 'gray'
 
 	return (
 		<motion.div
 			className='bg-white rounded-3xl p-4 shadow-xl border border-neutral-200 flex flex-col justify-between'
 			drag='x'
-			dragConstraints={{ left: 0, right: 0 }}
-			dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
-			dragElastic={0.5}
 			animate={controls}
-			whileHover={{ scale: 1.05 }}
 			style={{
-				...style,
-				boxShadow: `0 4px 6px ${boxShadowColor}` // Применяем динамический box-shadow
+				marginBottom: 20, // add space between cards
+				boxShadow: `0 4px 6px ${color}` // update box shadow color
 			}}
 		>
 			<div>{card.content}</div>
@@ -104,40 +59,14 @@ const Card = ({
 	)
 }
 
-export const CardStack = ({ items }: { items: CardType[] }) => {
-	const [activeIndex, setActiveIndex] = useState(0)
-
-	const handleSwipe = () => {
-		setActiveIndex(prev => prev + 1) // Перемещаем стек вверх
-	}
-
+const CardStack = ({ items }: { items: CardType[] }) => {
 	return (
-		<div className='relative w-[300px] sm:w-[400px] h-96 flex items-center justify-center'>
-			<AnimatePresence initial={false}>
-				{items
-					.slice(activeIndex, activeIndex + 2)
-					.map((card, index) => (
-						<Card
-							key={card.id}
-							card={card}
-							onSwipe={handleSwipe}
-							style={{
-								zIndex: items.length - index, // Управляем z-index
-								position: 'absolute',
-								cursor: 'pointer',
-								width: '100%',
-								height: '100%',
-								boxShadow: 'transparent 0px 4px 6px',
-								transform: `translateY(${
-									index * -10
-								}px) scale(${1 - index * 0.05})`, // Сдвиг и уменьшение масштаба для следующих карточек
-								transition:
-									'transform 0.15s, opacity 0.15s, box-shadow 0.35s', // Плавная анимация для сдвига и масштаба
-								opacity: index === 0 ? 1 : 0.7 // Пониженная прозрачность для следующих карточек
-							}}
-						/>
-					))}
-			</AnimatePresence>
+		<div className='flex flex-col justify-center'>
+			{items.map((card, index) => (
+				<Card key={card.id} card={card} onSwipe={() => {}} />
+			))}
 		</div>
 	)
 }
+
+export default CardStack
