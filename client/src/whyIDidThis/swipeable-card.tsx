@@ -38,12 +38,12 @@ const SwipeableCard = ({ card, onSwipe }: SwipeableCardType) => {
 		})
 	}
 
-	const handleDrag = (_, info: { offset: { x: number } }) => {
+	const handleDrag = (_: unknown, info: { offset: { x: number } }) => {
 		if (!isMounted.current) return
 		controls.set({ x: info.offset.x })
 	}
 
-	const handleDragEnd = (_, info: { offset: { x: number } }) => {
+	const handleDragEnd = (_: unknown, info: { offset: { x: number } }) => {
 		if (!isMounted.current) return
 		const swipeDistance = info.offset.x
 
