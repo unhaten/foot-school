@@ -4,9 +4,6 @@ import CardStack from '@/whyIDidThis/card-stack'
 import { cardsData } from './cards-data'
 
 export function Cards() {
-	// В данном случае, мы управляем состоянием видимых карточек внутри CardStack
-	// Поэтому, нет необходимости в дополнительном состоянии для управления видимостью карточек
-
 	return (
 		<div className='w-full mx-auto'>
 			<div className='flex flex-col items-center justify-center'>
