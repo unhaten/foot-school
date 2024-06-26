@@ -1,6 +1,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import CardContent from './card-content'
+
 type CardContentType = {
 	id: number
 	name: string
@@ -15,11 +16,8 @@ type SwipeableCardType = {
 
 const SwipeableCard = ({ card, onSwipe }: SwipeableCardType) => {
 	const controls = useAnimation()
-	const [swipeDirection, setSwipeDirection] = useState<
-		null | 'left' | 'right'
-	>(null)
+
 	const [color, setColor] = useState('gray') // initial color
-	const [swipeLog, setSwipeLog] = useState([]) // new state to store swipe logs
 
 	const isMounted = useRef(false)
 
@@ -30,6 +28,16 @@ const SwipeableCard = ({ card, onSwipe }: SwipeableCardType) => {
 		}
 	}, [])
 
+	const handlePositionBack = () => {
+		controls.start({
+			x: 0,
+			transition: {
+				duration: 0.3,
+				ease: 'easeOut'
+			}
+		})
+	}
+
 	const handleDrag = (_, info: { offset: { x: number } }) => {
 		if (!isMounted.current) return
 		controls.set({ x: info.offset.x })
@@ -37,25 +45,19 @@ const SwipeableCard = ({ card, onSwipe }: SwipeableCardType) => {
 
 	const handleDragEnd = (_, info: { offset: { x: number } }) => {
 		if (!isMounted.current) return
-		const direction = info.offset.x > 0 ? 'right' : 'left'
-		setSwipeDirection(direction)
-		setColor(direction === 'right' ? 'green' : 'red') // update color based on swipe direction
+		const swipeDistance = info.offset.x
 
-		// create a new swipe log entry
-		const swipeLogEntry = {
-			id: card.id,
-			direction
+		if (swipeDistance > 50) {
+			// Like swipe
+			setColor('green')
+		} else if (swipeDistance < -50) {
+			// Dislike swipe
+			setColor('red')
+		} else {
+			handlePositionBack()
 		}
-		setSwipeLog(prevLogs => [...prevLogs, swipeLogEntry])
 
-		// animate the card back to its original position
-		controls.start({
-			x: 0,
-			transition: {
-				duration: 0.3, // adjust the duration to your liking
-				ease: 'easeOut'
-			}
-		})
+		handlePositionBack()
 	}
 
 	return (
@@ -66,16 +68,11 @@ const SwipeableCard = ({ card, onSwipe }: SwipeableCardType) => {
 			onDragEnd={handleDragEnd}
 			animate={controls}
 			style={{
-				marginBottom: 20, // add space between cards
+				marginBottom: 20,
 				boxShadow: `0 4px 6px ${color}` // update box shadow color
 			}}
 		>
 			<CardContent card={card} />
-			{swipeLog.map((log, index) => (
-				<p key={index}>
-					Card {log.id} swiped {log.direction}
-				</p>
-			))}
 		</motion.div>
 	)
 }
